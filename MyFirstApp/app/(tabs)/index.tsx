@@ -12,7 +12,7 @@ const myName = "Tsukinosaur";
 const greet = (name:string) => {
   return `Hello, ${name}!`;
 };
-const classmates = ["Tsukishima","Hinata","Kageyama"];
+const classmates = ["June","Karl","Jackie","Regie","Jaydee"];
 classmates.map(name => greet(name));
 
 console.log(classmates.map(name => greet(name)));
