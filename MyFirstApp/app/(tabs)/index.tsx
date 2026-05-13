@@ -133,86 +133,128 @@
 // });
 
 //changed the bg color, name, profile link, and made it more interactive (5.13.26) 
-import { useState } from 'react';
-import { View, Text, TextInput, Button, Image, ScrollView, StyleSheet } from 'react-native';
+// import { useState } from 'react';
+// import { View, Text, TextInput, Button, Image, ScrollView, StyleSheet } from 'react-native';
 
-export default function App() {
+// export default function App() {
  
-  const [name, setName] = useState('');
-  const [count, setCount] = useState(0);
+//   const [name, setName] = useState('');
+//   const [count, setCount] = useState(0);
 
  
-  const message =
-    count > 0
-      ? `${name}, you tapped ${count} times!`
-      : "Tap the + button to start";
+//   const message =
+//     count > 0
+//       ? `${name}, you tapped ${count} times!`
+//       : "Tap the + button to start";
 
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
+//   return (
+//     <ScrollView contentContainerStyle={styles.container}>
     
-      <Image source={{ uri: 'https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/378408608_2941995982601352_1709841353273746055_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF44PzMresvfXhb2D0QDp6rkTkgrw-e2guROSCvD57aC50scVbHQ5dkgPFDC0_2vGzue1L9vRC6rGHZYD0rfmtp&_nc_ohc=3ARM61It6j4Q7kNvwGpVNi_&_nc_oc=AdpdOfOC3PbNVjg9127FxFel-lO7nhhR6B_gFheV9ph9FWpgUXWJC3yya6mTRVI52XQ&_nc_zt=23&_nc_ht=scontent.fdvo2-1.fna&_nc_gid=vqi8MIdyrxznhSjK7hnnkg&_nc_ss=7b2a8&oh=00_Af45PX8sbTOwPoKJePwJP5UpZoIkDGeZ5eyvA_IXpTikAQ&oe=6A0A57E2' }} style={styles.image} />
+//       <Image source={{ uri: 'https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/378408608_2941995982601352_1709841353273746055_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF44PzMresvfXhb2D0QDp6rkTkgrw-e2guROSCvD57aC50scVbHQ5dkgPFDC0_2vGzue1L9vRC6rGHZYD0rfmtp&_nc_ohc=3ARM61It6j4Q7kNvwGpVNi_&_nc_oc=AdpdOfOC3PbNVjg9127FxFel-lO7nhhR6B_gFheV9ph9FWpgUXWJC3yya6mTRVI52XQ&_nc_zt=23&_nc_ht=scontent.fdvo2-1.fna&_nc_gid=vqi8MIdyrxznhSjK7hnnkg&_nc_ss=7b2a8&oh=00_Af45PX8sbTOwPoKJePwJP5UpZoIkDGeZ5eyvA_IXpTikAQ&oe=6A0A57E2' }} style={styles.image} />
 
    
-      <TextInput
-        placeholder="Enter your name"
-        onChangeText={setName}
-        style={styles.input}
-      />
+//       <TextInput
+//         placeholder="Enter your name"
+//         onChangeText={setName}
+//         style={styles.input}
+//       />
 
     
-      <Text style={styles.text}>
-        {name === '' ? "Please enter your name" : `Hello, ${name}!`}
-      </Text>
+//       <Text style={styles.text}>
+//         {name === '' ? "Please enter your name" : `Hello, ${name}!`}
+//       </Text>
 
       
-      <Text style={styles.text}>{message}</Text>
+//       <Text style={styles.text}>{message}</Text>
 
   
-      <View style={styles.buttonContainer}>
-        <Button title="+" onPress={() => setCount(count + 1)} />
-        <Button title="-" onPress={() => setCount(count - 1)} />
-        <Button title="Reset" onPress={() => setCount(0)} />
-      </View>
-    </ScrollView>
+//       <View style={styles.buttonContainer}>
+//         <Button title="+" onPress={() => setCount(count + 1)} />
+//         <Button title="-" onPress={() => setCount(count - 1)} />
+//         <Button title="Reset" onPress={() => setCount(0)} />
+//       </View>
+//     </ScrollView>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     padding: 20,
+//     backgroundColor: '#f7f9e7'
+//   },
+
+//   image: {
+//     width: 120,
+//     height: 120,
+//     borderRadius: 60,
+//     marginBottom: 20
+//   },
+
+//   input: {
+//     borderWidth: 1,
+//     borderColor: '#626262',
+//     backgroundColor: '#FFF',
+//     color: '#333',
+//     width: '80%',
+//     padding: 10,
+//     marginBottom: 10,
+//     borderRadius: 10
+//   },
+
+//   text: {
+//     fontSize: 16,
+//     marginVertical: 5,
+//     color: '#061603',
+//     fontWeight: 'bold'
+//   },
+
+//   buttonContainer: {
+//     marginTop: 10,
+//     width: '60%'
+//   }
+// });
+
+
+//changed the profile, background color, and font color (5.13.26)
+import { useState } from 'react';
+import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
+
+export default function App() {
+  const [name, setName] = useState('');
+
+  return (
+    <View style={s.screen}>
+      <Image
+        source={{ uri: 'https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/378408608_2941995982601352_1709841353273746055_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF44PzMresvfXhb2D0QDp6rkTkgrw-e2guROSCvD57aC50scVbHQ5dkgPFDC0_2vGzue1L9vRC6rGHZYD0rfmtp&_nc_ohc=3ARM61It6j4Q7kNvwGpVNi_&_nc_oc=AdpdOfOC3PbNVjg9127FxFel-lO7nhhR6B_gFheV9ph9FWpgUXWJC3yya6mTRVI52XQ&_nc_zt=23&_nc_ht=scontent.fdvo2-1.fna&_nc_gid=vqi8MIdyrxznhSjK7hnnkg&_nc_ss=7b2a8&oh=00_Af45PX8sbTOwPoKJePwJP5UpZoIkDGeZ5eyvA_IXpTikAQ&oe=6A0A57E2' }}
+        style={s.photo}
+      />
+
+      <TextInput
+        placeholder="Type your name..."
+        onChangeText={setName}
+        style={{
+          height: 40,
+          margin: 12,
+          borderWidth: 1,
+          padding: 10,
+          width: 200,
+        }}
+      />
+
+      <Text style={s.name}>
+        Hello, {name}!
+      </Text>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#f7f9e7'
-  },
-
-  image: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    marginBottom: 20
-  },
-
-  input: {
-    borderWidth: 1,
-    borderColor: '#626262',
-    backgroundColor: '#FFF',
-    color: '#333',
-    width: '80%',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 10
-  },
-
-  text: {
-    fontSize: 16,
-    marginVertical: 5,
-    color: '#061603',
-    fontWeight: 'bold'
-  },
-
-  buttonContainer: {
-    marginTop: 10,
-    width: '60%'
-  }
+// I change the stylesheet to make the profile screen look better. 04/12/2026
+const s = StyleSheet.create({
+  screen: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5cf' },
+  photo:  { width: 120, height: 120, borderRadius: 60 },
+  name:   { fontSize: 22, fontWeight: 'bold', marginTop: 12, color: '#214a25' },
+  bio:    { fontSize: 14, color: '#888' }
 });
